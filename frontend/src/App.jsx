@@ -14,15 +14,41 @@ function App() {
   }, [])
 
   const fetchTasks = async () => {
-    try {
-      const data = await getTasks()
-      setTasks(data)
-    } catch (error) {
-      console.error('Error cargando tareas:', error)
-    } finally {
-      setLoading(false)
-    }
+  try {
+    const data = await getTasks()
+    setTasks(data)
+  } catch (error) {
+    console.error('Backend no disponible, cargando datos de ejemplo')
+    setTasks([
+      {
+        id: 1,
+        titulo: 'Aprender Node.js y Express',
+        descripcion: 'Construir una API REST con CRUD completo',
+        completada: true
+      },
+      {
+        id: 2,
+        titulo: 'Conectar React con MySQL',
+        descripcion: 'Usar axios para consumir la API del backend',
+        completada: true
+      },
+      {
+        id: 3,
+        titulo: 'Subir proyecto a GitHub',
+        descripcion: 'Hacer commit del Task Manager fullstack',
+        completada: false
+      },
+      {
+        id: 4,
+        titulo: 'Desplegar en produccion',
+        descripcion: 'Publicar el proyecto con dominio propio',
+        completada: false
+      }
+    ])
+  } finally {
+    setLoading(false)
   }
+}
 
   const handleTaskCreated = (newTask) => {
     setTasks([...tasks, newTask])

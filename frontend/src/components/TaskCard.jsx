@@ -6,32 +6,32 @@ function TaskCard({ task, onUpdated, onDeleted }) {
   const [loading, setLoading] = useState(false)
 
   const handleToggle = async () => {
-    setLoading(true)
-    try {
-      const updated = await updateTask(task.id, {
-        titulo: task.titulo,
-        descripcion: task.descripcion,
-        completada: !task.completada
-      })
-      onUpdated(updated)
-    } catch (error) {
-      console.error('Error al actualizar:', error)
-    } finally {
-      setLoading(false)
-    }
+  setLoading(true)
+  try {
+    const updated = await updateTask(task.id, {
+      titulo: task.titulo,
+      descripcion: task.descripcion,
+      completada: !task.completada
+    })
+    onUpdated(updated)
+  } catch (error) {
+    onUpdated({ ...task, completada: !task.completada })
+  } finally {
+    setLoading(false)
   }
+}
 
-  const handleDelete = async () => {
-    setLoading(true)
-    try {
-      await deleteTask(task.id)
-      onDeleted(task.id)
-    } catch (error) {
-      console.error('Error al eliminar:', error)
-    } finally {
-      setLoading(false)
-    }
+const handleDelete = async () => {
+  setLoading(true)
+  try {
+    await deleteTask(task.id)
+    onDeleted(task.id)
+  } catch (error) {
+    onDeleted(task.id)
+  } finally {
+    setLoading(false)
   }
+}
 
   return (
     <div className={`${styles.row} ${task.completada ? styles.completada : ''}`}>
