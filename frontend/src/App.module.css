@@ -127,3 +127,95 @@
   color: #64748b;
   font-size: 14px;
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .sidebarLogo {
+    padding: 14px 16px;
+    border-bottom: none;
+    border-right: 0.5px solid rgba(255,255,255,0.1);
+  }
+
+  .sidebarNav {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    flex: 1;
+    overflow-x: auto;
+  }
+
+  .navItem {
+    padding: 14px 16px;
+    white-space: nowrap;
+    border-right: none;
+    border-bottom: 2px solid transparent;
+    font-size: 12px;
+  }
+
+  .navItem.active {
+    border-right: none;
+    border-bottom-color: #60a5fa;
+  }
+
+  .app {
+    flex-direction: column;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 20px 16px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .statValue {
+    font-size: 22px;
+  }
+
+  .topbarTitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebarLogoTitle {
+    font-size: 14px;
+  }
+
+  .sidebarLogoSub {
+    display: none;
+  }
+
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .statCard {
+    padding: 12px;
+  }
+
+  .statValue {
+    font-size: 20px;
+  }
+
+  .statLabel {
+    font-size: 10px;
+  }
+
+  .main {
+    padding: 16px 12px;
+  }
+}

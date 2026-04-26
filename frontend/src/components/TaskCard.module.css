@@ -123,3 +123,48 @@
   opacity: 0.4;
   cursor: not-allowed;
 }
+
+@media (max-width: 768px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .taskInfo {
+    gap: 10px;
+  }
+
+  .estadoCol {
+    padding-left: 30px;
+  }
+
+  .accionesCol {
+    padding-left: 30px;
+    justify-content: flex-start;
+  }
+
+  .btnDelete {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+
+  .titulo {
+    font-size: 14px;
+  }
+
+  .descripcion {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
+    padding: 12px;
+  }
+
+  .check {
+    width: 20px;
+    height: 20px;
+  }
+}
