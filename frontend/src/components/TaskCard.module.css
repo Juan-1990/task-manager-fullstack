@@ -1,0 +1,125 @@
+.row {
+  display: grid;
+  grid-template-columns: 1fr 120px 100px;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 0.5px solid #f1f5f9;
+  transition: background 0.15s;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row:hover {
+  background: #f8fafc;
+}
+
+.completada {
+  opacity: 0.6;
+}
+
+.taskInfo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.check {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1.5px solid #cbd5e1;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.check:hover {
+  border-color: #1e3a5f;
+}
+
+.checked {
+  background: #059669;
+  border-color: #059669;
+}
+
+.checkmark {
+  display: block;
+  width: 9px;
+  height: 5px;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(-45deg) translateY(-1px);
+}
+
+.titulo {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.tachado {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.descripcion {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 3px;
+}
+
+.estadoCol {
+  display: flex;
+  align-items: center;
+}
+
+.badgePending {
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.badgeDone {
+  background: #d1fae5;
+  color: #065f46;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.accionesCol {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btnDelete {
+  background: transparent;
+  border: 0.5px solid #fca5a5;
+  color: #ef4444;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnDelete:hover {
+  background: #fef2f2;
+}
+
+.btnDelete:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
